@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-section, .right-section {
+  display: flex;
+  align-items: center;
+}
+
+.brand-name {
+  margin-left: 16px;
+  font-weight: 500;
+}
