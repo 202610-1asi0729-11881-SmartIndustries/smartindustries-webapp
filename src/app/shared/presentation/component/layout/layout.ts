@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {MatToolbar, MatToolbarRow} from '@angular/material/toolbar';
 import {MatIconButton} from '@angular/material/button';
 import {MatIcon} from '@angular/material/icon';
+import {LanguageSwitcher} from '../language-switcher/language-switcher';
 
 @Component({
   selector: 'app-layout',
@@ -9,6 +10,7 @@ import {MatIcon} from '@angular/material/icon';
     MatToolbar,
     MatIconButton,
     MatIcon,
+    LanguageSwitcher,
   ],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
