@@ -1,15 +1,25 @@
 import { Component } from '@angular/core';
-import { MatSidenavContainer, MatSidenavContent} from '@angular/material/sidenav';
+import {
+  MatDrawer,
+  MatDrawerContainer,
+  MatDrawerContent,
+  MatSidenavContainer,
+  MatSidenavContent
+} from '@angular/material/sidenav';
 import {MatIcon} from '@angular/material/icon';
 import {MatButton} from '@angular/material/button';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
   selector: 'app-operations-layout',
   imports: [
-    MatSidenavContainer,
-    MatSidenavContent,
     MatIcon,
-    MatButton
+    MatButton,
+    RouterLinkActive,
+    RouterLink,
+    MatDrawerContent,
+    MatDrawerContainer,
+    MatDrawer
   ],
   templateUrl: './operations-layout.html',
   styleUrl: './operations-layout.css',
@@ -23,7 +33,4 @@ export class OperationsLayout {
     { label: "Audit", icon: "search_activity", route: ""},
     { label: "Guests", icon: "shield_person", route: ""}
   ];
-
-  navigateTo(route: string, index: number): void{
-  }
 }
