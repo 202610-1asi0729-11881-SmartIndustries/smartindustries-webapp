@@ -53,6 +53,24 @@
       <mat-card-header>
         <mat-card-title>Offline devices</mat-card-title>
       </mat-card-header>
+      <mat-card-content>
+        <table mat-table [dataSource]="offlineDevices">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let element">{{element.id}}</td>
+          </ng-container>
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let element">{{element.name}}</td>
+          </ng-container>
+          <ng-container matColumnDef="site">
+            <th mat-header-cell *matHeaderCellDef>Site</th>
+            <td mat-cell *matCellDef="let element">{{element.site}}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="offlineDevicesColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: offlineDevicesColumns"></tr>
+        </table>
+      </mat-card-content>
     </mat-card>
     <mat-card class="small-card" appearance="outlined">
       <mat-card-header>
