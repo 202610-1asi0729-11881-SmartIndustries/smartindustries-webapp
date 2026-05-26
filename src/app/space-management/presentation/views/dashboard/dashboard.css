@@ -1,0 +1,26 @@
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.left-column {
+  display: flex;
+}
+
+.big-card {
+  flex: 1;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.small-card {
+  flex: 1;
+}
