@@ -1,3 +1,8 @@
 {
-
+  "topbar": {
+    "menu": {
+      "subscription": "Subscription",
+      "sign-out": "Sign out"
+    }
+  }
 }
