@@ -24,3 +24,16 @@
 .small-card {
   flex: 1;
 }
+
+.today-info {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  align-items: center;
+}
+
+.today-info div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
