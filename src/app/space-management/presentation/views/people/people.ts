@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {MatFormField, MatInput, MatLabel} from '@angular/material/input';
 import {MatIcon} from '@angular/material/icon';
-import {MatIconButton} from '@angular/material/button';
+import {MatButton, MatIconButton} from '@angular/material/button';
 import {SearchBar} from '../../../../shared/presentation/component/search-bar/search-bar';
 import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
@@ -18,7 +18,8 @@ import {PeopleTable} from '../../components/people-table/people-table';
     SearchBar,
     MatOption,
     MatSelect,
-    PeopleTable
+    PeopleTable,
+    MatButton
   ],
   templateUrl: './people.html',
   styleUrl: './people.css',
