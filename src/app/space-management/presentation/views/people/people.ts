@@ -5,6 +5,7 @@ import {MatIconButton} from '@angular/material/button';
 import {SearchBar} from '../../../../shared/presentation/component/search-bar/search-bar';
 import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
+import {PeopleTable} from '../../components/people-table/people-table';
 
 @Component({
   selector: 'app-people',
@@ -16,12 +17,13 @@ import {MatSelect} from '@angular/material/select';
     MatIconButton,
     SearchBar,
     MatOption,
-    MatSelect
+    MatSelect,
+    PeopleTable
   ],
   templateUrl: './people.html',
   styleUrl: './people.css',
 })
 export class People {
-  protected statusOptions = ["Active", "Inactive", "Identification lost"];
-  protected siteOptions = ["Off-site", "North Campus", "East Convention Center"]
+  protected statusOptions = ["All", "Active", "Inactive", "Identification lost"];
+  protected siteOptions = ["All", "Off-site", "North Campus", "East Convention Center"]
 }
