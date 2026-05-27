@@ -5,6 +5,7 @@ import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
 import {MatIcon} from '@angular/material/icon';
 import {MatIconButton} from '@angular/material/button';
+import {AdministratorsTable} from '../../components/administrators-table/administrators-table';
 
 @Component({
   selector: 'app-administrators',
@@ -15,7 +16,8 @@ import {MatIconButton} from '@angular/material/button';
     MatOption,
     MatSelect,
     MatIcon,
-    MatIconButton
+    MatIconButton,
+    AdministratorsTable
   ],
   templateUrl: './administrators.html',
   styleUrl: './administrators.css',
