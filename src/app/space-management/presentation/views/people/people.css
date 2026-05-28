@@ -1,3 +1,17 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 .filters {
   display: flex;
   align-items: center;
@@ -7,4 +21,9 @@
 .filters div {
   display: flex;
   gap: 15px
+}
+
+app-people-table {
+  flex: 1;
+  min-height: 0;
 }
