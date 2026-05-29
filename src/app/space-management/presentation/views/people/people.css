@@ -1,9 +1,4 @@
 :host {
-  display: block;
-  height: 100%;
-}
-
-:host {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -20,7 +15,17 @@
 
 .filters div {
   display: flex;
+  align-items: center;
   gap: 15px
+}
+
+.filters mat-form-field {
+  width: 160px;
+}
+
+.filters div app-search-bar,
+.filters > button {
+  transform: translateY(-8px);
 }
 
 app-people-table {
