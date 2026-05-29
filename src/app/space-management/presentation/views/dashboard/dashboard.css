@@ -30,6 +30,15 @@
   flex: 1;
 }
 
+.alerts-card {
+  overflow: hidden;
+}
+
+.alerts-card .table-scroll-container {
+  max-height: 215px;
+  overflow-y: auto;
+}
+
 .today-info {
   display: flex;
   justify-content: space-around;

@@ -45,6 +45,9 @@ export class Dashboard {
     {person: "Juan Perez", type: "Repeated", date: "18-05-2026 / 16:14"},
     {person: "Juan Perez", type: "Repeated", date: "18-05-2026 / 16:14"},
     {person: "Juan Perez", type: "Repeated", date: "18-05-2026 / 16:14"},
+    {person: "Juan Perez", type: "Repeated", date: "18-05-2026 / 16:14"},
+    {person: "Juan Perez", type: "Repeated", date: "18-05-2026 / 16:14"},
+    {person: "Juan Perez", type: "Repeated", date: "18-05-2026 / 16:14"},
   ]
   protected recentAlertsColumns: string[] = ["person", "type", "date"];
 
