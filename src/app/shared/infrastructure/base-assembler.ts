@@ -1,3 +1,6 @@
+import {BaseEntity} from './base-entity';
+import {BaseResource, BaseResponse} from './base-response';
+
 /**
  * Defines conversions between domain entities and API representations.
  *
