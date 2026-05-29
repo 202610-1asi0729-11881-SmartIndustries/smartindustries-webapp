@@ -16,7 +16,7 @@
 .filters div {
   display: flex;
   align-items: center;
-  gap: 15px
+  gap: 15px;
 }
 
 .filters mat-form-field {
@@ -28,7 +28,7 @@
   transform: translateY(-8px);
 }
 
-app-people-table {
+app-audit-table {
   flex: 1;
   min-height: 0;
 }
