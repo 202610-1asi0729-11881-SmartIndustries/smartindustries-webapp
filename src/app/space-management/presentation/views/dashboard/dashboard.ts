@@ -10,6 +10,9 @@ import {
   MatTable
 } from '@angular/material/table';
 import {TranslatePipe} from '@ngx-translate/core';
+import {MatFormField, MatLabel} from '@angular/material/input';
+import {MatSelect} from '@angular/material/select';
+import {MatOption} from '@angular/material/core';
 import {StatusBadge} from '../../../../shared/presentation/component/status-badge/status-badge';
 
 @Component({
@@ -30,6 +33,10 @@ import {StatusBadge} from '../../../../shared/presentation/component/status-badg
     MatHeaderRowDef,
     MatRowDef,
     TranslatePipe,
+    MatFormField,
+    MatLabel,
+    MatSelect,
+    MatOption,
     StatusBadge
   ],
   templateUrl: './dashboard.html',
@@ -46,6 +53,8 @@ export class Dashboard {
     {person: "Imanol Limache", deviceId: 4, status: "Rejected"},
   ]
   protected recentAccessAttemptsColumns: string[] = ["person", "deviceId", "result"];
+  protected sites: string[] = ['All', 'North campus', 'South campus', 'East campus'];
+  protected selectedSite: string = 'All';
 
   protected recentAlerts: {person: string, type: string, date: string}[] = [
     {person: "Juan Perez", type: "Repeated", date: "18-05-2026 / 16:14"},
