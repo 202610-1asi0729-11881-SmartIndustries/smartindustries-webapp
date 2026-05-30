@@ -8,6 +8,7 @@ import {
   MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef,
   MatTable
 } from '@angular/material/table';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-administrators-table',
@@ -21,7 +22,8 @@ import {
     MatHeaderRow,
     MatHeaderRowDef,
     MatRow,
-    MatRowDef
+    MatRowDef,
+    TranslatePipe
   ],
   templateUrl: './administrators-table.html',
   styleUrl: './administrators-table.css',

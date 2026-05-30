@@ -8,6 +8,7 @@ import {MatIcon} from '@angular/material/icon';
 import {MatIconButton} from '@angular/material/button';
 import {AdministratorsTable} from '../../components/administrators-table/administrators-table';
 import {InviteAdministratorForm} from '../../components/invite-administrator-form/invite-administrator-form';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-administrators',
@@ -19,7 +20,8 @@ import {InviteAdministratorForm} from '../../components/invite-administrator-for
     MatSelect,
     MatIcon,
     MatIconButton,
-    AdministratorsTable
+    AdministratorsTable,
+    TranslatePipe
   ],
   templateUrl: './administrators.html',
   styleUrl: './administrators.css',

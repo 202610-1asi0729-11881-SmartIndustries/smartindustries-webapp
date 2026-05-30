@@ -44,5 +44,21 @@
       "accepted-attempts": "Accepted attempts",
       "rejected-attempts": "Rejected attempts"
     }
+  },
+  "administrators": {
+    "title": "Administrators",
+    "filters": {
+      "status": "Status"
+    },
+    "table": {
+      "id": "ID",
+      "name": "Name",
+      "role": "Role"
+    },
+    "form": {
+      "title": "Invite administrator",
+      "email": "Email",
+      "role": "Role"
+    }
   }
 }
