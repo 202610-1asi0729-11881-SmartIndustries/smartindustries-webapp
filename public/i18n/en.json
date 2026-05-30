@@ -48,12 +48,14 @@
   "administrators": {
     "title": "Administrators",
     "filters": {
-      "status": "Status"
+      "invitation-status": "Invitation status",
+      "role": "Role"
     },
     "table": {
       "id": "ID",
       "name": "Name",
-      "role": "Role"
+      "role": "Role",
+      "invitation-status": "Invitation status"
     },
     "form": {
       "title": "Invite administrator",

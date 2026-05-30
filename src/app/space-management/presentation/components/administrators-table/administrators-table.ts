@@ -29,12 +29,12 @@ import {TranslatePipe} from '@ngx-translate/core';
   styleUrl: './administrators-table.css',
 })
 export class AdministratorsTable {
-  protected administrators: {id: number, name: string, role: string}[] = [
-    {id: 1, name: "Imanol Limache", role: "Operator"},
-    {id: 1, name: "Imanol Limache", role: "Operator"},
-    {id: 1, name: "Imanol Limache", role: "Operator"},
-    {id: 1, name: "Imanol Limache", role: "Operator"},
-    {id: 1, name: "Imanol Limache", role: "Operator"},
+  protected administrators: {id: number, name: string, role: string, invitationStatus: string}[] = [
+    {id: 1, name: "Imanol Limache", role: "Operator", invitationStatus: "Pending"},
+    {id: 1, name: "Imanol Limache", role: "Operator", invitationStatus: "Accepted"},
+    {id: 1, name: "Imanol Limache", role: "Operator", invitationStatus: "Pending"},
+    {id: 1, name: "Imanol Limache", role: "Operator", invitationStatus: "Accepted"},
+    {id: 1, name: "Imanol Limache", role: "Operator", invitationStatus: "Pending"},
   ];
-  protected administratorsColumns: string[] = ["id", "name", "role"]
+  protected administratorsColumns: string[] = ["id", "name", "role", "invitationStatus"]
 }

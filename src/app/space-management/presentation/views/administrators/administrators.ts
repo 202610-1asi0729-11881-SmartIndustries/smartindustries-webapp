@@ -30,6 +30,7 @@ export class Administrators {
   protected readonly dialog = inject(MatDialog);
 
   protected rolesOptions: String[] = ["Operator", "Root"];
+  protected invitationStatusOptions: string[] = ['All', 'Accepted', 'Pending'];
 
   protected openInviteAdministratorForm() {
     this.dialog.open(InviteAdministratorForm);
