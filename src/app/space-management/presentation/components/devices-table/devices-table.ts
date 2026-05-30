@@ -9,6 +9,7 @@ import {
   MatRowDef,
   MatTable
 } from '@angular/material/table';
+import { StatusBadge } from '../../../../shared/presentation/component/status-badge/status-badge';
 
 @Component({
   selector: 'app-devices-table',
@@ -22,7 +23,8 @@ import {
     MatCellDef,
     MatColumnDef,
     MatHeaderCell,
-    MatHeaderCellDef
+    MatHeaderCellDef,
+    StatusBadge
   ],
   templateUrl: './devices-table.html',
   styleUrl: './devices-table.css',
@@ -30,7 +32,7 @@ import {
 export class DevicesTable {
   protected devices: {id: number, name: string, site: string, mode: string, status: string}[] = [
     {id: 1, name: "Main entrance access", site: "North campus", mode: "Free", status: "Online"},
-    {id: 1, name: "Main entrance access", site: "North campus", mode: "Free", status: "Online"},
+    {id: 1, name: "Main entrance access", site: "North campus", mode: "Free", status: "Offline"},
     {id: 1, name: "Main entrance access", site: "North campus", mode: "Free", status: "Online"},
     {id: 1, name: "Main entrance access", site: "North campus", mode: "Free", status: "Online"},
     {id: 1, name: "Main entrance access", site: "North campus", mode: "Free", status: "Online"},
