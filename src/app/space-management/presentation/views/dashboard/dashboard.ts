@@ -10,6 +10,7 @@ import {
   MatTable
 } from '@angular/material/table';
 import {TranslatePipe} from '@ngx-translate/core';
+import {StatusBadge} from '../../../../shared/presentation/component/status-badge/status-badge';
 
 @Component({
   selector: 'app-dashboard',
@@ -28,28 +29,21 @@ import {TranslatePipe} from '@ngx-translate/core';
     MatRow,
     MatHeaderRowDef,
     MatRowDef,
-    TranslatePipe
+    TranslatePipe,
+    StatusBadge
   ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
 export class Dashboard {
-  protected recentAccessAttempts : {person: string, deviceId: number, result: boolean }[] = [
-    {person: "Juan Perez", deviceId: 1, result: true},
-    {person: "Imanol Limache", deviceId: 2, result: true},
-    {person: "Juan Perez", deviceId: 3, result: true},
-    {person: "Imanol Limache", deviceId: 2, result: true},
-    {person: "Imanol Limache", deviceId: 4, result: true},
-    {person: "Imanol Limache", deviceId: 4, result: true},
-    {person: "Imanol Limache", deviceId: 4, result: true},
-    {person: "Imanol Limache", deviceId: 4, result: true},
-    {person: "Imanol Limache", deviceId: 4, result: true},
-    {person: "Imanol Limache", deviceId: 4, result: true},
-    {person: "Imanol Limache", deviceId: 4, result: true},
-    {person: "Imanol Limache", deviceId: 4, result: true},
-    {person: "Imanol Limache", deviceId: 4, result: true},
-    {person: "Imanol Limache", deviceId: 4, result: true},
-    {person: "Imanol Limache", deviceId: 4, result: true},
+  protected recentAccessAttempts : {person: string, deviceId: number, status: string }[] = [
+    {person: "Juan Perez", deviceId: 1, status: "Accepted"},
+    {person: "Imanol Limache", deviceId: 2, status: "Rejected"},
+    {person: "Juan Perez", deviceId: 3, status: "Accepted"},
+    {person: "Imanol Limache", deviceId: 2, status: "Rejected"},
+    {person: "Imanol Limache", deviceId: 4, status: "Accepted"},
+    {person: "Imanol Limache", deviceId: 4, status: "Rejected"},
+    {person: "Imanol Limache", deviceId: 4, status: "Rejected"},
   ]
   protected recentAccessAttemptsColumns: string[] = ["person", "deviceId", "result"];
 
