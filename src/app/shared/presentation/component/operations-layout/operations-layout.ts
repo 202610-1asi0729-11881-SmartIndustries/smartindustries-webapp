@@ -30,6 +30,7 @@ export class OperationsLayout {
     { label: "Devices", icon: "door_back", route: "devices"},
     { label: "Rules", icon: "gavel", route: "rules"},
     { label: "Audit", icon: "search_activity", route: "audit"},
+    { label: "Alerts", icon: "warning", route: "alerts"},
     { label: "Administrators", icon: "shield_person", route: "administrators"},
     { label: "Roles", icon: "badge", route: "roles"},
   ];
