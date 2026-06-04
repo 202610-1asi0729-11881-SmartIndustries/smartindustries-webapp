@@ -28,6 +28,7 @@ export class OperationsLayout {
     { label: "Dashboard", icon: "dashboard", route: "dashboard"},
     { label: "People", icon: "accessibility_new", route: "people"},
     { label: "Devices", icon: "door_back", route: "devices"},
+    { label: "Sites", icon: "corporate_fare", route: "sites"},
     { label: "Rules", icon: "gavel", route: "rules"},
     { label: "Audit", icon: "search_activity", route: "audit"},
     { label: "Alerts", icon: "warning", route: "alerts"},
