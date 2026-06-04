@@ -14,14 +14,12 @@ import {CreatePersonForm} from '../../components/create-person-form/create-perso
   imports: [
     MatFormField,
     MatLabel,
-    MatInput,
     MatIcon,
     MatIconButton,
     SearchBar,
     MatOption,
     MatSelect,
     PeopleTable,
-    MatButton
   ],
   templateUrl: './people.html',
   styleUrl: './people.css',
