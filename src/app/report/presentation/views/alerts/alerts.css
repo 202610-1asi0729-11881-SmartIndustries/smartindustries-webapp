@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.filters mat-form-field {
+  width: 160px;
+}
+
+.filters app-search-bar {
+  transform: translateY(-8px);
+}

@@ -52,6 +52,13 @@
       "name": "Name"
     }
   },
+  "alerts": {
+    "title": "Alerts",
+    "filters": {
+      "site": "Site",
+      "status": "Status"
+    }
+  },
   "sites": {
     "title": "Sites",
     "table": {

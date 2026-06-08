@@ -52,6 +52,13 @@
       "name": "Nombre"
     }
   },
+  "alerts": {
+    "title": "Alertas",
+    "filters": {
+      "site": "Sede",
+      "status": "Estado"
+    }
+  },
   "sites": {
     "title": "Sitios",
     "table": {
