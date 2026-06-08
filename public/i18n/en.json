@@ -45,6 +45,9 @@
       "rejected-attempts": "Rejected attempts"
     }
   },
+  "roles": {
+    "title": "Roles"
+  },
   "administrators": {
     "title": "Administrators",
     "filters": {
