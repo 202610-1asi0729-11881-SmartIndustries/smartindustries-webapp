@@ -15,6 +15,7 @@ export class SpaceManagementStore {
   private readonly errorSignal = signal<string|null>(null);
 
   constructor(private spaceManagementApi: SpaceManagementApi) {
+    this.loadOrganizations();
   }
 
   private loadOrganizations(): void {

@@ -1,10 +1,10 @@
 {
   "organizations": [
-    {"name": "TechCorp", "owner": "Carlos Mendoza", "description": "Leading provider of smart access control solutions for enterprise campuses."},
-    {"name": "GreenLeaf Energy", "owner": "Ana García", "description": "Renewable energy company focused on solar and wind power generation."},
-    {"name": "MediCore Health", "owner": "Luis Torres", "description": "Healthcare technology startup developing AI-powered diagnostic tools."},
-    {"name": "NorthStar Logistics", "owner": "Sara López", "description": "Supply chain and logistics firm operating across Latin America."},
-    {"name": "BlueWave Robotics", "owner": "Pedro Ramírez", "description": "Industrial automation and robotics manufacturer for the automotive sector."}
+    {"id": 1, "name": "TechCorp", "owner": "Carlos Mendoza", "description": "Leading provider of smart access control solutions for enterprise campuses."},
+    {"id": 2, "name": "GreenLeaf Energy", "owner": "Ana García", "description": "Renewable energy company focused on solar and wind power generation."},
+    {"id": 3, "name": "MediCore Health", "owner": "Luis Torres", "description": "Healthcare technology startup developing AI-powered diagnostic tools."},
+    {"id": 4, "name": "NorthStar Logistics", "owner": "Sara López", "description": "Supply chain and logistics firm operating across Latin America."},
+    {"id": 5, "name": "BlueWave Robotics", "owner": "Pedro Ramírez", "description": "Industrial automation and robotics manufacturer for the automotive sector."}
   ],
   "people": [
     {"id": 1, "name": "Carlos Mendoza", "currentLocation": "North Campus - Server room", "status": "Active"},

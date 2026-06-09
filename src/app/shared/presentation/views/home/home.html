@@ -6,7 +6,7 @@
   </button>
 </div>
 <div class="organizations-grid">
-  @for(organization of organizationsList; track organization.name) {
+  @for(organization of store.organizations(); track organization.id) {
     <app-organization-card [organization]="organization"/>
   }
 </div>
