@@ -1,3 +1,70 @@
 {
-
+  "organizations": [
+    {"name": "TechCorp", "owner": "Carlos Mendoza", "description": "Leading provider of smart access control solutions for enterprise campuses."},
+    {"name": "GreenLeaf Energy", "owner": "Ana García", "description": "Renewable energy company focused on solar and wind power generation."},
+    {"name": "MediCore Health", "owner": "Luis Torres", "description": "Healthcare technology startup developing AI-powered diagnostic tools."},
+    {"name": "NorthStar Logistics", "owner": "Sara López", "description": "Supply chain and logistics firm operating across Latin America."},
+    {"name": "BlueWave Robotics", "owner": "Pedro Ramírez", "description": "Industrial automation and robotics manufacturer for the automotive sector."}
+  ],
+  "people": [
+    {"id": 1, "name": "Carlos Mendoza", "currentLocation": "North Campus - Server room", "status": "Active"},
+    {"id": 2, "name": "Ana García", "currentLocation": "East Convention Center - Hall A", "status": "Active"},
+    {"id": 3, "name": "Luis Torres", "currentLocation": "Off-site", "status": "Disabled"},
+    {"id": 4, "name": "Sara López", "currentLocation": "North Campus - Lab 3", "status": "Active"},
+    {"id": 5, "name": "Pedro Ramírez", "currentLocation": "South Campus - Warehouse", "status": "Disabled"},
+    {"id": 6, "name": "María Fernández", "currentLocation": "Off-site", "status": "Disabled"}
+  ],
+  "devices": [
+    {"id": 1, "name": "Main Gate Access", "site": "North Campus", "mode": "Free", "status": "Online"},
+    {"id": 2, "name": "Server Room Door", "site": "North Campus", "mode": "Security", "status": "Online"},
+    {"id": 3, "name": "Warehouse Entry", "site": "East Convention Center", "mode": "Blocked", "status": "Offline"},
+    {"id": 4, "name": "Parking Barrier", "site": "North Campus", "mode": "Free", "status": "Online"},
+    {"id": 5, "name": "Lab B Entry", "site": "East Convention Center", "mode": "Security", "status": "Online"},
+    {"id": 6, "name": "Office Floor 3", "site": "Off-site", "mode": "Free", "status": "Offline"}
+  ],
+  "sites": [
+    {"id": 1, "name": "North Campus"},
+    {"id": 2, "name": "South Campus"},
+    {"id": 3, "name": "Downtown Office"},
+    {"id": 4, "name": "Warehouse A"},
+    {"id": 5, "name": "East Convention Center"}
+  ],
+  "access-groups": [
+    {"id": 1, "name": "Weekend Maintenance"},
+    {"id": 2, "name": "Night Shift Access"},
+    {"id": 3, "name": "Contractor Access"},
+    {"id": 4, "name": "Emergency Personnel"},
+    {"id": 5, "name": "Cleaning Staff"},
+    {"id": 6, "name": "VIP Area Access"}
+  ],
+  "access-events": [
+    {"id": 1, "location": "North Campus", "person": "Carlos Mendoza", "status": "Accepted", "date": "2025-06-08"},
+    {"id": 2, "location": "Server Room", "person": "Unknown", "status": "Rejected", "date": "2025-06-08"},
+    {"id": 3, "location": "East Campus", "person": "Ana García", "status": "Resolved", "date": "2025-06-07"},
+    {"id": 4, "location": "North Campus", "person": "Luis Torres", "status": "Accepted", "date": "2025-06-07"},
+    {"id": 5, "location": "Warehouse A", "person": "Sara López", "status": "Active", "date": "2025-06-06"},
+    {"id": 6, "location": "Downtown Office", "person": "Pedro Ramírez", "status": "Accepted", "date": "2025-06-05"}
+  ],
+  "alerts": [
+    {"id": 1, "location": "North Campus", "person": "Carlos Mendoza", "status": "Active", "date": "2025-06-08"},
+    {"id": 2, "location": "South Campus", "person": "Ana García", "status": "Resolved", "date": "2025-06-07"},
+    {"id": 3, "location": "Downtown Office", "person": "Luis Torres", "status": "Active", "date": "2025-06-07"},
+    {"id": 4, "location": "Warehouse A", "person": "Sara López", "status": "Resolved", "date": "2025-06-06"},
+    {"id": 5, "location": "North Campus", "person": "Pedro Ramírez", "status": "Active", "date": "2025-06-05"},
+    {"id": 6, "location": "East Campus", "person": "María Fernández", "status": "Active", "date": "2025-06-05"}
+  ],
+  "administrators": [
+    {"id": 1, "name": "Imanol Limache", "role": "Operator", "status": "Accepted"},
+    {"id": 2, "name": "Ana García", "role": "Root", "status": "Pending"},
+    {"id": 3, "name": "Luis Torres", "role": "Operator", "status": "Accepted"},
+    {"id": 4, "name": "Sara López", "role": "Root", "status": "Pending"},
+    {"id": 5, "name": "Pedro Ramírez", "role": "Operator", "status": "Accepted"}
+  ],
+  "roles": [
+    {"id": 1, "name": "Administrator"},
+    {"id": 2, "name": "Operator"},
+    {"id": 3, "name": "Viewer"},
+    {"id": 4, "name": "Auditor"},
+    {"id": 5, "name": "Maintenance"}
+  ]
 }
