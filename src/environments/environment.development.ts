@@ -6,5 +6,6 @@ export const environment = {
   devicesEndPointPath: '/devices',
   accessGroupsEndPointPath: '/access-groups',
   accessEventsEndPointPath: '/access-events',
-  alertsEndPointPath: '/alerts'
+  alertsEndPointPath: '/alerts',
+  administratorsEndPointPath: '/administrators'
 };
