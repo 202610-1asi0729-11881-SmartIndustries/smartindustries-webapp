@@ -4,5 +4,6 @@ export const environment = {
   organizationsEndPointPath: '/organizations',
   sitesEndPointPath: '/sites',
   devicesEndPointPath: '/devices',
-  accessGroupsEndPointPath: '/access-groups'
+  accessGroupsEndPointPath: '/access-groups',
+  accessEventsEndPointPath: '/access-events'
 };
