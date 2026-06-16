@@ -1,12 +1,12 @@
 export class Organization {
   private _id: number;
   private _name: string;
-  private _owner: string;
+  private _ownerName: string;
   private _description: string;
 
-  constructor(id: number, name: string, owner: string, description: string) {
+  constructor(id: number, name: string, ownerName: string, description: string) {
     this._name = name;
-    this._owner = owner;
+    this._ownerName = ownerName;
     this._description = description;
     this._id = id;
   }
@@ -19,8 +19,8 @@ export class Organization {
     return this._name;
   }
 
-  get owner(): string {
-    return this._owner;
+  get ownerName(): string {
+    return this._ownerName;
   }
 
   get description(): string {

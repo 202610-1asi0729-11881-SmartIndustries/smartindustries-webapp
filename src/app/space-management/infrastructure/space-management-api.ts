@@ -26,8 +26,8 @@ export class SpaceManagementApi extends BaseApi{
     this.peopleEndpoint = new PeopleApiEndpoint(http);
   }
 
-  getOrganizations(): Observable<Organization[]>{
-    return this.organizationsEndpoint.getAll();
+  getOrganizationsByUserId(userId: number): Observable<Organization[]>{
+    return this.organizationsEndpoint.getByUserId(userId);
   }
 
   getSites(): Observable<Site[]> {

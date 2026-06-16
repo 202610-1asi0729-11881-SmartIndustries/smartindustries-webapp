@@ -1,13 +1,16 @@
-import {Injectable, signal} from '@angular/core';
-import {SpaceManagementApi} from '../infrastructure/space-management-api';
-import {Organization} from '../domain/model/organization.entity';
-import {Site} from '../domain/model/site.entity';
-import {Device} from '../domain/model/device.entity';
-import {Person} from '../domain/model/person.entity';
-import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
+import { Injectable, inject, DestroyRef, signal } from '@angular/core';
+import { SpaceManagementApi } from '../infrastructure/space-management-api';
+import { Organization } from '../domain/model/organization.entity';
+import { Site } from '../domain/model/site.entity';
+import { Device } from '../domain/model/device.entity';
+import { Person } from '../domain/model/person.entity';
+import { IamStore } from '../../iam/application/iam.store';
+import { Subject, takeUntil } from 'rxjs';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class SpaceManagementStore {
+
+  private readonly destroy$ = new Subject<void>();
 
   private readonly organizationsSignal = signal<Organization[]>([]);
   readonly organizations = this.organizationsSignal.asReadonly();
@@ -24,9 +27,16 @@ export class SpaceManagementStore {
   private readonly loadingSignal = signal<boolean>(false);
   readonly loading = this.loadingSignal.asReadonly();
 
-  private readonly errorSignal = signal<string|null>(null);
+  private readonly errorSignal = signal<string | null>(null);
 
-  constructor(private spaceManagementApi: SpaceManagementApi) {
+  constructor(
+    private spaceManagementApi: SpaceManagementApi,
+    private iamStore: IamStore
+  ) {
+    inject(DestroyRef).onDestroy(() => {
+      this.destroy$.next();
+      this.destroy$.complete();
+    });
     this.loadOrganizations();
     this.loadSites();
     this.loadDevices();
@@ -34,9 +44,12 @@ export class SpaceManagementStore {
   }
 
   private loadOrganizations(): void {
+    const userId = this.iamStore.currentUser()?.id;
+    if (!userId) return;
+
     this.loadingSignal.set(true);
     this.errorSignal.set(null);
-    this.spaceManagementApi.getOrganizations().pipe(takeUntilDestroyed()).subscribe({
+    this.spaceManagementApi.getOrganizationsByUserId(userId).pipe(takeUntil(this.destroy$)).subscribe({
       next: organizations => {
         this.organizationsSignal.set(organizations);
         this.loadingSignal.set(false);
@@ -52,7 +65,7 @@ export class SpaceManagementStore {
   private loadSites(): void {
     this.loadingSignal.set(true);
     this.errorSignal.set(null);
-    this.spaceManagementApi.getSites().pipe(takeUntilDestroyed()).subscribe({
+    this.spaceManagementApi.getSites().pipe(takeUntil(this.destroy$)).subscribe({
       next: sites => {
         this.sitesSignal.set(sites);
         this.loadingSignal.set(false);
@@ -68,7 +81,7 @@ export class SpaceManagementStore {
   private loadDevices(): void {
     this.loadingSignal.set(true);
     this.errorSignal.set(null);
-    this.spaceManagementApi.getDevices().pipe(takeUntilDestroyed()).subscribe({
+    this.spaceManagementApi.getDevices().pipe(takeUntil(this.destroy$)).subscribe({
       next: devices => {
         this.devicesSignal.set(devices);
         this.loadingSignal.set(false);
@@ -84,7 +97,7 @@ export class SpaceManagementStore {
   private loadPeople(): void {
     this.loadingSignal.set(true);
     this.errorSignal.set(null);
-    this.spaceManagementApi.getPeople().pipe(takeUntilDestroyed()).subscribe({
+    this.spaceManagementApi.getPeople().pipe(takeUntil(this.destroy$)).subscribe({
       next: people => {
         this.peopleSignal.set(people);
         this.loadingSignal.set(false);

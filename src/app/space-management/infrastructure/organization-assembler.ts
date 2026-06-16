@@ -11,7 +11,7 @@ export class OrganizationAssembler implements BaseAssembler<Organization, Organi
     return new Organization(
       resource.id,
       resource.name,
-      resource.owner,
+      resource.ownerName,
       resource.description
     );
   }
@@ -20,7 +20,7 @@ export class OrganizationAssembler implements BaseAssembler<Organization, Organi
     return {
       id: entity.id,
       name: entity.name,
-      owner: entity.owner,
+      ownerName: entity.ownerName,
       description: entity.description
     } as OrganizationsResource;
   }

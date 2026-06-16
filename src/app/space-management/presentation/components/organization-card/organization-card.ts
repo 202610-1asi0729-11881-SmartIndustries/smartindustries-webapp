@@ -27,7 +27,7 @@ import {DeleteOrganizationDialog} from '../delete-organization-form/delete-organ
 })
 export class OrganizationCard {
   protected readonly dialog = inject(MatDialog);
-  organization = input.required<{name: string, owner: string, description: string}>();
+  organization = input.required<{name: string, ownerName: string, description: string}>();
 
   protected openDeleteDialog() {
     this.dialog.open(DeleteOrganizationDialog, {
