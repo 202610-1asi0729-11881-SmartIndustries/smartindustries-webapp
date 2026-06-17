@@ -1,0 +1,18 @@
+<h2 matDialogTitle>Create role</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="name" name="name" required>
+  </mat-form-field>
+
+  <p class="section-label">Permissions</p>
+  <div class="checkbox-group">
+    <mat-checkbox [(ngModel)]="canCreateSites" name="canCreateSites">Can create sites</mat-checkbox>
+    <mat-checkbox [(ngModel)]="canCreatePeople" name="canCreatePeople">Can create people</mat-checkbox>
+    <mat-checkbox [(ngModel)]="canConnectDevices" name="canConnectDevices">Can connect devices</mat-checkbox>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button matDialogClose>Cancel</button>
+  <button mat-button [disabled]="store.loading() || !name" (click)="submit()">Create</button>
+</mat-dialog-actions>

@@ -1,5 +1,10 @@
 <h1>{{'roles.title' | translate}}</h1>
 <div class="filters">
-  <app-search-bar/>
+  <div>
+    <app-search-bar/>
+  </div>
+  <button matIconButton="outlined" (click)="openCreateRoleForm()">
+    <mat-icon>add</mat-icon>
+  </button>
 </div>
 <app-roles-table [roles]="store.roles()"/>
