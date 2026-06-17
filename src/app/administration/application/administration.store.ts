@@ -29,20 +29,20 @@ export class AdministrationStore {
       this.destroy$.next();
       this.destroy$.complete();
     });
-    this.loadAdministrators();
 
     effect(() => {
       const orgId = this.spaceManagementStore.selectedOrganizationId();
       if (orgId) {
         this.loadRoles(orgId);
+        this.loadAdministrators(orgId);
       }
     });
   }
 
-  private loadAdministrators(): void {
+  private loadAdministrators(organizationId: number): void {
     this.loadingSignal.set(true);
     this.errorSignal.set(null);
-    this.administrationApi.getAdministrators().pipe(takeUntil(this.destroy$)).subscribe({
+    this.administrationApi.getUsersByOrganizationId(organizationId).pipe(takeUntil(this.destroy$)).subscribe({
       next: administrators => {
         this.administratorsSignal.set(administrators);
         this.loadingSignal.set(false);
