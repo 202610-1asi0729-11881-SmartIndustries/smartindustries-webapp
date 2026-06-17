@@ -4,9 +4,16 @@ import {PeopleResource, PeopleResponse} from './people-response';
 import {PersonAssembler} from './person-assembler';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment.development';
+import {Observable, map} from 'rxjs';
 
 export class PeopleApiEndpoint extends BaseApiEndpoint<Person, PeopleResource, PeopleResponse, PersonAssembler> {
   constructor(http: HttpClient) {
     super(http, `${environment.platformProviderApiBaseUrl}${environment.peopleEndPointPath}`, new PersonAssembler());
+  }
+
+  getByOrganizationId(organizationId: number): Observable<Person[]> {
+    return this.http.get<PeopleResource[]>(`${this.endpointUrl}?organizationId=${organizationId}`).pipe(
+      map(resources => resources.map(r => this.assembler.toEntityFromResource(r)))
+    );
   }
 }

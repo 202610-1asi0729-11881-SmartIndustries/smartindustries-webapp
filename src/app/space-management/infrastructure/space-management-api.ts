@@ -38,7 +38,7 @@ export class SpaceManagementApi extends BaseApi{
     return this.devicesEndpoint.getAll();
   }
 
-  getPeople(): Observable<Person[]> {
-    return this.peopleEndpoint.getAll();
+  getPeopleByOrganizationId(organizationId: number): Observable<Person[]> {
+    return this.peopleEndpoint.getByOrganizationId(organizationId);
   }
 }
