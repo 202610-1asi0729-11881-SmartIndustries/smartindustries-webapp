@@ -42,12 +42,12 @@ export class SpaceManagementStore {
     });
     this.loadOrganizations();
     this.loadDevices();
-    this.loadPeople();
   }
 
   selectOrganization(organizationId: number): void {
     this.selectedOrganizationIdSignal.set(organizationId);
     this.loadSites(organizationId);
+    this.loadPeople(organizationId);
   }
 
   private loadOrganizations(): void {
@@ -101,10 +101,10 @@ export class SpaceManagementStore {
     });
   }
 
-  private loadPeople(): void {
+  private loadPeople(organizationId: number): void {
     this.loadingSignal.set(true);
     this.errorSignal.set(null);
-    this.spaceManagementApi.getPeople().pipe(takeUntil(this.destroy$)).subscribe({
+    this.spaceManagementApi.getPeopleByOrganizationId(organizationId).pipe(takeUntil(this.destroy$)).subscribe({
       next: people => {
         this.peopleSignal.set(people);
         this.loadingSignal.set(false);
