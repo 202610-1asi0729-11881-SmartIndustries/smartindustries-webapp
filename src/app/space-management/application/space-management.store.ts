@@ -50,6 +50,7 @@ export class SpaceManagementStore {
     localStorage.setItem(SELECTED_ORG_KEY, String(organizationId));
     this.loadSites(organizationId);
     this.loadPeople(organizationId);
+    this.loadDevices(organizationId);
   }
 
   private loadOrganizations(): void {
@@ -91,10 +92,10 @@ export class SpaceManagementStore {
     });
   }
 
-  private loadDevices(): void {
+  private loadDevices(organizationId: number): void {
     this.loadingSignal.set(true);
     this.errorSignal.set(null);
-    this.spaceManagementApi.getDevices().pipe(takeUntil(this.destroy$)).subscribe({
+    this.spaceManagementApi.getDevicesByOrganizationId(organizationId).pipe(takeUntil(this.destroy$)).subscribe({
       next: devices => {
         this.devicesSignal.set(devices);
         this.loadingSignal.set(false);

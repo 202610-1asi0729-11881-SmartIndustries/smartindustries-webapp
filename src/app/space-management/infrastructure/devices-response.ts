@@ -2,10 +2,12 @@ import {BaseResource, BaseResponse} from '../../shared/infrastructure/base-respo
 
 export interface DevicesResource extends BaseResource {
   id: number;
+  siteId: number;
+  siteName: string;
+  siteDescription: string;
   name: string;
-  site: string;
-  mode: string;
   status: string;
+  mode: string;
 }
 
 export interface DevicesResponse extends BaseResponse {

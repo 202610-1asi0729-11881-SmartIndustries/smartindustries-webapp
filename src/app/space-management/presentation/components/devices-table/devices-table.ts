@@ -32,5 +32,5 @@ import {Device} from '../../../domain/model/device.entity';
 })
 export class DevicesTable {
   devices = input<Device[]>([]);
-  protected devicesColumns: string[] = ['id', 'name', 'site', 'mode', 'status'];
+  protected devicesColumns: string[] = ['id', 'name', 'siteName', 'mode', 'status'];
 }
