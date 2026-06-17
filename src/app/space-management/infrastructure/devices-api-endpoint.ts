@@ -16,4 +16,10 @@ export class DevicesApiEndpoint extends BaseApiEndpoint<Device, DevicesResource,
       map(resources => resources.map(r => this.assembler.toEntityFromResource(r)))
     );
   }
+
+  createDevice(siteId: number, name: string, mode: string): Observable<Device> {
+    return this.http.post<DevicesResource>(this.endpointUrl, { siteId, name, mode }).pipe(
+      map(resource => this.assembler.toEntityFromResource(resource))
+    );
+  }
 }

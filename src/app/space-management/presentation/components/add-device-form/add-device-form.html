@@ -2,29 +2,26 @@
 <mat-dialog-content>
   <mat-form-field>
     <mat-label>Name</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>IP address</mat-label>
-    <input matInput>
+    <input matInput [(ngModel)]="name" name="name" required>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Site</mat-label>
-    <mat-select>
-      @for (site of siteOptions; track site) {
-        <mat-option [value]="site">{{ site }}</mat-option>
+    <mat-select [(ngModel)]="selectedSiteId" name="site" required>
+      @for (site of store.sites(); track site.id) {
+        <mat-option [value]="site.id">{{ site.name }}</mat-option>
       }
     </mat-select>
   </mat-form-field>
-  <div class="connection-row">
-    <button mat-stroked-button>Test connection</button>
-    <div class="connection-status">
-      <span class="status-dot"></span>
-      <span>Offline</span>
-    </div>
-  </div>
+  <mat-form-field>
+    <mat-label>Mode</mat-label>
+    <mat-select [(ngModel)]="selectedMode" name="mode" required>
+      @for (mode of modeOptions; track mode) {
+        <mat-option [value]="mode">{{ mode }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button matDialogClose>Cancel</button>
-  <button mat-button matDialogClose>Add</button>
+  <button mat-button [disabled]="store.loading() || !name || !selectedSiteId || !selectedMode" (click)="submit()">Add</button>
 </mat-dialog-actions>

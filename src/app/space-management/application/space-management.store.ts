@@ -107,6 +107,25 @@ export class SpaceManagementStore {
     });
   }
 
+  createDevice(siteId: number, name: string, mode: string): void {
+    const orgId = this.selectedOrganizationIdSignal();
+    if (!orgId) return;
+
+    this.loadingSignal.set(true);
+    this.errorSignal.set(null);
+    this.spaceManagementApi.createDevice(siteId, name, mode).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => {
+        this.loadingSignal.set(false);
+        this.errorSignal.set(null);
+        this.loadDevices(orgId);
+      },
+      error: err => {
+        this.errorSignal.set(this.formatError(err, 'Failed to create device'));
+        this.loadingSignal.set(false);
+      }
+    });
+  }
+
   private loadOrganizations(): void {
     const userId = this.iamStore.currentUser()?.id;
     if (!userId) return;

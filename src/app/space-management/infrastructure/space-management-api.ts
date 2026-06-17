@@ -46,6 +46,10 @@ export class SpaceManagementApi extends BaseApi{
     return this.devicesEndpoint.getByOrganizationId(organizationId);
   }
 
+  createDevice(siteId: number, name: string, mode: string): Observable<Device> {
+    return this.devicesEndpoint.createDevice(siteId, name, mode);
+  }
+
   getPeopleByOrganizationId(organizationId: number): Observable<Person[]> {
     return this.peopleEndpoint.getByOrganizationId(organizationId);
   }
