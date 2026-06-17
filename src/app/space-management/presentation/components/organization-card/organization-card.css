@@ -4,3 +4,7 @@
   align-items: flex-start;
   width: 100%;
 }
+
+mat-card {
+  cursor: pointer;
+}
