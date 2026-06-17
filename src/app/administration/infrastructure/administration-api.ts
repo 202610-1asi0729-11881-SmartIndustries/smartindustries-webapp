@@ -18,8 +18,8 @@ export class AdministrationApi extends BaseApi {
     this.rolesEndpoint = new RolesApiEndpoint(http);
   }
 
-  getAdministrators(): Observable<Administrator[]> {
-    return this.administratorsEndpoint.getAll();
+  getUsersByOrganizationId(organizationId: number): Observable<Administrator[]> {
+    return this.administratorsEndpoint.getByOrganizationId(organizationId);
   }
 
   getRolesByOrganizationId(organizationId: number): Observable<Role[]> {
