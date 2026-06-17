@@ -29,6 +29,9 @@ export class SpaceManagementStore {
 
   private readonly errorSignal = signal<string | null>(null);
 
+  private readonly selectedOrganizationIdSignal = signal<number | null>(null);
+  readonly selectedOrganizationId = this.selectedOrganizationIdSignal.asReadonly();
+
   constructor(
     private spaceManagementApi: SpaceManagementApi,
     private iamStore: IamStore
@@ -38,9 +41,13 @@ export class SpaceManagementStore {
       this.destroy$.complete();
     });
     this.loadOrganizations();
-    this.loadSites();
     this.loadDevices();
     this.loadPeople();
+  }
+
+  selectOrganization(organizationId: number): void {
+    this.selectedOrganizationIdSignal.set(organizationId);
+    this.loadSites(organizationId);
   }
 
   private loadOrganizations(): void {
@@ -62,10 +69,10 @@ export class SpaceManagementStore {
     });
   }
 
-  private loadSites(): void {
+  private loadSites(organizationId: number): void {
     this.loadingSignal.set(true);
     this.errorSignal.set(null);
-    this.spaceManagementApi.getSites().pipe(takeUntil(this.destroy$)).subscribe({
+    this.spaceManagementApi.getSitesByOrganizationId(organizationId).pipe(takeUntil(this.destroy$)).subscribe({
       next: sites => {
         this.sitesSignal.set(sites);
         this.loadingSignal.set(false);
