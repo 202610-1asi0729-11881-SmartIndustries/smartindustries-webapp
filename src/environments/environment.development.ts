@@ -10,5 +10,6 @@ export const environment = {
   alertsEndPointPath: '/alerts',
   administratorsEndPointPath: '/administrators',
   rolesEndPointPath: '/roles',
-  peopleEndPointPath: '/people'
+  peopleEndPointPath: '/people',
+  usersEndPointPath: '/users'
 };
