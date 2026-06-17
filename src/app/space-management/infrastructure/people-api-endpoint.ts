@@ -16,4 +16,10 @@ export class PeopleApiEndpoint extends BaseApiEndpoint<Person, PeopleResource, P
       map(resources => resources.map(r => this.assembler.toEntityFromResource(r)))
     );
   }
+
+  createPerson(organizationId: number, firstName: string, lastName: string, identityDocument: string): Observable<Person> {
+    return this.http.post<PeopleResource>(this.endpointUrl, { organizationId, firstName, lastName, identityDocument }).pipe(
+      map(resource => this.assembler.toEntityFromResource(resource))
+    );
+  }
 }

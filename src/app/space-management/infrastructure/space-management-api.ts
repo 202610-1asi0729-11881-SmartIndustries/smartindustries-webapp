@@ -45,4 +45,8 @@ export class SpaceManagementApi extends BaseApi{
   getPeopleByOrganizationId(organizationId: number): Observable<Person[]> {
     return this.peopleEndpoint.getByOrganizationId(organizationId);
   }
+
+  createPerson(organizationId: number, firstName: string, lastName: string, identityDocument: string): Observable<Person> {
+    return this.peopleEndpoint.createPerson(organizationId, firstName, lastName, identityDocument);
+  }
 }
