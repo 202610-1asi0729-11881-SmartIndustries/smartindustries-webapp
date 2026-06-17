@@ -1,19 +1,15 @@
 <table mat-table [dataSource]="administrators()">
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef>{{'administrators.table.id' | translate}}</th>
-    <td mat-cell *matCellDef="let element">{{element.id}}</td>
-  </ng-container>
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>{{'administrators.table.name' | translate}}</th>
-    <td mat-cell *matCellDef="let element">{{element.name}}</td>
+    <td mat-cell *matCellDef="let element">{{element.fullName}}</td>
   </ng-container>
-  <ng-container matColumnDef="role">
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let element">{{element.email}}</td>
+  </ng-container>
+  <ng-container matColumnDef="roleName">
     <th mat-header-cell *matHeaderCellDef>{{'administrators.table.role' | translate}}</th>
-    <td mat-cell *matCellDef="let element">{{element.role}}</td>
-  </ng-container>
-  <ng-container matColumnDef="status">
-    <th mat-header-cell *matHeaderCellDef>{{'administrators.table.invitation-status' | translate}}</th>
-    <td mat-cell *matCellDef="let element">{{element.status}}</td>
+    <td mat-cell *matCellDef="let element">{{element.roleName}}</td>
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="administratorsColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: administratorsColumns"></tr>

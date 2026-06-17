@@ -31,5 +31,5 @@ import {Administrator} from '../../../domain/model/administrator.entity';
 })
 export class AdministratorsTable {
   administrators = input<Administrator[]>([]);
-  protected administratorsColumns: string[] = ['id', 'name', 'role', 'status'];
+  protected administratorsColumns: string[] = ['name', 'email', 'roleName'];
 }
