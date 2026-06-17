@@ -1,29 +1,39 @@
 export class Person {
   private _id: number;
-  private _name: string;
-  private _currentLocation: string;
-  private _status: string;
+  private _organizationId: number;
+  private _firstName: string;
+  private _lastName: string;
+  private _identityDocument: string;
 
-  constructor(id: number, name: string, currentLocation: string, status: string) {
+  constructor(id: number, organizationId: number, firstName: string, lastName: string, identityDocument: string) {
     this._id = id;
-    this._name = name;
-    this._currentLocation = currentLocation;
-    this._status = status;
+    this._organizationId = organizationId;
+    this._firstName = firstName;
+    this._lastName = lastName;
+    this._identityDocument = identityDocument;
   }
 
   get id(): number {
     return this._id;
   }
 
-  get name(): string {
-    return this._name;
+  get organizationId(): number {
+    return this._organizationId;
   }
 
-  get currentLocation(): string {
-    return this._currentLocation;
+  get firstName(): string {
+    return this._firstName;
   }
 
-  get status(): string {
-    return this._status;
+  get lastName(): string {
+    return this._lastName;
+  }
+
+  get identityDocument(): string {
+    return this._identityDocument;
+  }
+
+  get fullName(): string {
+    return `${this._firstName} ${this._lastName}`;
   }
 }
