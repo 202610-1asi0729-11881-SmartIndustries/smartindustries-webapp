@@ -8,10 +8,16 @@ export class PersonAssembler implements BaseAssembler<Person, PeopleResource, Pe
   }
 
   toEntityFromResource(resource: PeopleResource): Person {
-    return new Person(resource.id, resource.name, resource.currentLocation, resource.status);
+    return new Person(resource.id, resource.organizationId, resource.firstName, resource.lastName, resource.identityDocument);
   }
 
   toResourceFromEntity(entity: Person): PeopleResource {
-    return {id: entity.id, name: entity.name, currentLocation: entity.currentLocation, status: entity.status} as PeopleResource;
+    return {
+      id: entity.id,
+      organizationId: entity.organizationId,
+      firstName: entity.firstName,
+      lastName: entity.lastName,
+      identityDocument: entity.identityDocument
+    } as PeopleResource;
   }
 }

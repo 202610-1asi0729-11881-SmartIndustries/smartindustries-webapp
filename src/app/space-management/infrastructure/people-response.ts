@@ -2,9 +2,10 @@ import {BaseResource, BaseResponse} from '../../shared/infrastructure/base-respo
 
 export interface PeopleResource extends BaseResource {
   id: number;
-  name: string;
-  currentLocation: string;
-  status: string;
+  organizationId: number;
+  firstName: string;
+  lastName: string;
+  identityDocument: string;
 }
 
 export interface PeopleResponse extends BaseResponse {
