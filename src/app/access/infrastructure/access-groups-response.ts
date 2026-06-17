@@ -2,7 +2,9 @@ import {BaseResource, BaseResponse} from '../../shared/infrastructure/base-respo
 
 export interface AccessGroupsResource extends BaseResource {
   id: number;
+  organizationId: number;
   name: string;
+  description: string;
 }
 
 export interface AccessGroupsResponse extends BaseResponse {

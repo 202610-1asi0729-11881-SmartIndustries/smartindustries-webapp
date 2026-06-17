@@ -8,10 +8,15 @@ export class AccessGroupAssembler implements BaseAssembler<AccessGroup, AccessGr
   }
 
   toEntityFromResource(resource: AccessGroupsResource): AccessGroup {
-    return new AccessGroup(resource.id, resource.name);
+    return new AccessGroup(resource.id, resource.organizationId, resource.name, resource.description);
   }
 
   toResourceFromEntity(entity: AccessGroup): AccessGroupsResource {
-    return {id: entity.id, name: entity.name} as AccessGroupsResource;
+    return {
+      id: entity.id,
+      organizationId: entity.organizationId,
+      name: entity.name,
+      description: entity.description,
+    } as AccessGroupsResource;
   }
 }
