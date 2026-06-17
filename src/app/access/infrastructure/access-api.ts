@@ -14,7 +14,11 @@ export class AccessApi extends BaseApi {
     this.accessGroupsEndpoint = new AccessGroupsApiEndpoint(http);
   }
 
-  getAccessGroups(): Observable<AccessGroup[]> {
-    return this.accessGroupsEndpoint.getAll();
+  getAccessGroupsByOrganizationId(organizationId: number): Observable<AccessGroup[]> {
+    return this.accessGroupsEndpoint.getByOrganizationId(organizationId);
+  }
+
+  createAccessGroup(organizationId: number, name: string, description: string): Observable<AccessGroup> {
+    return this.accessGroupsEndpoint.createAccessGroup(organizationId, name, description);
   }
 }
