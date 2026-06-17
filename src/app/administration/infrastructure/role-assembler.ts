@@ -8,10 +8,26 @@ export class RoleAssembler implements BaseAssembler<Role, RolesResource, RolesRe
   }
 
   toEntityFromResource(resource: RolesResource): Role {
-    return new Role(resource.id, resource.name);
+    return new Role(
+      resource.id,
+      resource.organizationId,
+      resource.name,
+      resource.canCreateSites,
+      resource.canCreatePeople,
+      resource.canConnectDevices,
+      resource.deletable
+    );
   }
 
   toResourceFromEntity(entity: Role): RolesResource {
-    return {id: entity.id, name: entity.name} as RolesResource;
+    return {
+      id: entity.id,
+      organizationId: entity.organizationId,
+      name: entity.name,
+      canCreateSites: entity.canCreateSites,
+      canCreatePeople: entity.canCreatePeople,
+      canConnectDevices: entity.canConnectDevices,
+      deletable: entity.deletable,
+    } as RolesResource;
   }
 }
