@@ -16,4 +16,10 @@ export class RolesApiEndpoint extends BaseApiEndpoint<Role, RolesResource, Roles
       map(resources => resources.map(r => this.assembler.toEntityFromResource(r)))
     );
   }
+
+  createRole(organizationId: number, name: string, canCreateSites: boolean, canCreatePeople: boolean, canConnectDevices: boolean): Observable<Role> {
+    return this.http.post<RolesResource>(this.endpointUrl, { organizationId, name, canCreateSites, canCreatePeople, canConnectDevices }).pipe(
+      map(resource => this.assembler.toEntityFromResource(resource))
+    );
+  }
 }
