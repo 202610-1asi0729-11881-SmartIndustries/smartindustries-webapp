@@ -1,4 +1,4 @@
-import {Component, input} from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import {
   MatCell,
   MatCellDef,
@@ -14,8 +14,11 @@ import {
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
+import { MatDialog } from '@angular/material/dialog';
 import { TranslatePipe } from '@ngx-translate/core';
 import { Site } from '../../../domain/model/site.entity';
+import { CreateSiteForm } from '../create-site-form/create-site-form';
+import { SpaceManagementStore } from '../../../application/space-management.store';
 
 @Component({
   selector: 'app-sites-table',
@@ -44,11 +47,14 @@ export class SitesTable {
   sites = input<Site[]>([]);
   protected sitesColumns: string[] = ['id', 'name', 'actions'];
 
+  private readonly dialog = inject(MatDialog);
+  private readonly store = inject(SpaceManagementStore);
+
   protected editSite(site: Site): void {
-    // TODO
+    this.dialog.open(CreateSiteForm, { data: site });
   }
 
   protected deleteSite(site: Site): void {
-    // TODO
+    this.store.deleteSite(site.id);
   }
 }

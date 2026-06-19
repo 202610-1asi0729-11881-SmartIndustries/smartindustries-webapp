@@ -107,6 +107,44 @@ export class SpaceManagementStore {
     });
   }
 
+  updateSite(siteId: number, name: string, description: string): void {
+    const orgId = this.selectedOrganizationIdSignal();
+    if (!orgId) return;
+
+    this.loadingSignal.set(true);
+    this.errorSignal.set(null);
+    this.spaceManagementApi.updateSite(siteId, name, description).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => {
+        this.loadingSignal.set(false);
+        this.errorSignal.set(null);
+        this.loadSites(orgId);
+      },
+      error: err => {
+        this.errorSignal.set(this.formatError(err, 'Failed to update site'));
+        this.loadingSignal.set(false);
+      }
+    });
+  }
+
+  deleteSite(siteId: number): void {
+    const orgId = this.selectedOrganizationIdSignal();
+    if (!orgId) return;
+
+    this.loadingSignal.set(true);
+    this.errorSignal.set(null);
+    this.spaceManagementApi.deleteSite(siteId).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => {
+        this.loadingSignal.set(false);
+        this.errorSignal.set(null);
+        this.loadSites(orgId);
+      },
+      error: err => {
+        this.errorSignal.set(this.formatError(err, 'Failed to delete site'));
+        this.loadingSignal.set(false);
+      }
+    });
+  }
+
   createDevice(siteId: number, name: string, mode: string): void {
     const orgId = this.selectedOrganizationIdSignal();
     if (!orgId) return;

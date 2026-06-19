@@ -42,6 +42,14 @@ export class SpaceManagementApi extends BaseApi{
     return this.sitesEndpoint.createSite(organizationId, name, description);
   }
 
+  updateSite(siteId: number, name: string, description: string): Observable<Site> {
+    return this.sitesEndpoint.updateSite(siteId, name, description);
+  }
+
+  deleteSite(siteId: number): Observable<void> {
+    return this.sitesEndpoint.deleteSite(siteId);
+  }
+
   getDevicesByOrganizationId(organizationId: number): Observable<Device[]> {
     return this.devicesEndpoint.getByOrganizationId(organizationId);
   }
