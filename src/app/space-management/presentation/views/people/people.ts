@@ -3,7 +3,6 @@ import {MatFormField, MatInput, MatLabel} from '@angular/material/input';
 import {MatIcon} from '@angular/material/icon';
 import {MatButton, MatIconButton} from '@angular/material/button';
 import {MatDialog} from '@angular/material/dialog';
-import {SearchBar} from '../../../../shared/presentation/component/search-bar/search-bar';
 import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
 import {PeopleTable} from '../../components/people-table/people-table';
@@ -17,7 +16,6 @@ import {SpaceManagementStore} from '../../../application/space-management.store'
     MatLabel,
     MatIcon,
     MatIconButton,
-    SearchBar,
     MatOption,
     MatSelect,
     PeopleTable,

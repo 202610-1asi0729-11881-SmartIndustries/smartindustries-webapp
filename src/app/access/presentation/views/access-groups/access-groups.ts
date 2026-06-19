@@ -6,14 +6,12 @@ import {MatIcon} from '@angular/material/icon';
 import {MatIconButton} from '@angular/material/button';
 import {MatDialog} from '@angular/material/dialog';
 import {AccessGroupsTable} from '../../components/rules-table/access-groups-table';
-import {SearchBar} from '../../../../shared/presentation/component/search-bar/search-bar';
 import {CreateAccessGroupForm} from '../../components/create-access-group-form/create-access-group-form';
 import {AccessStore} from '../../../application/access.store';
 
 @Component({
   selector: 'app-access-groups',
   imports: [
-    SearchBar,
     MatFormField,
     MatLabel,
     MatOption,
@@ -21,7 +19,6 @@ import {AccessStore} from '../../../application/access.store';
     MatIcon,
     MatIconButton,
     AccessGroupsTable,
-    SearchBar,
   ],
   templateUrl: './access-groups.html',
   styleUrl: './access-groups.css',
