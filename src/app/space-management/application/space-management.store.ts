@@ -88,6 +88,44 @@ export class SpaceManagementStore {
     });
   }
 
+  updatePerson(personId: number, firstName: string, lastName: string, identityDocument: string): void {
+    const orgId = this.selectedOrganizationIdSignal();
+    if (!orgId) return;
+
+    this.loadingSignal.set(true);
+    this.errorSignal.set(null);
+    this.spaceManagementApi.updatePerson(personId, firstName, lastName, identityDocument).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => {
+        this.loadingSignal.set(false);
+        this.errorSignal.set(null);
+        this.loadPeople(orgId);
+      },
+      error: err => {
+        this.errorSignal.set(this.formatError(err, 'Failed to update person'));
+        this.loadingSignal.set(false);
+      }
+    });
+  }
+
+  deletePerson(personId: number): void {
+    const orgId = this.selectedOrganizationIdSignal();
+    if (!orgId) return;
+
+    this.loadingSignal.set(true);
+    this.errorSignal.set(null);
+    this.spaceManagementApi.deletePerson(personId).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => {
+        this.loadingSignal.set(false);
+        this.errorSignal.set(null);
+        this.loadPeople(orgId);
+      },
+      error: err => {
+        this.errorSignal.set(this.formatError(err, 'Failed to delete person'));
+        this.loadingSignal.set(false);
+      }
+    });
+  }
+
   createSite(name: string, description: string): void {
     const orgId = this.selectedOrganizationIdSignal();
     if (!orgId) return;

@@ -1,4 +1,4 @@
-import {Component, input} from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import {
   MatCell, MatCellDef,
   MatColumnDef,
@@ -12,7 +12,10 @@ import {
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
+import { MatDialog } from '@angular/material/dialog';
 import { Person } from '../../../domain/model/person.entity';
+import { CreatePersonForm } from '../create-person-form/create-person-form';
+import { SpaceManagementStore } from '../../../application/space-management.store';
 
 @Component({
   selector: 'app-people-table',
@@ -40,11 +43,14 @@ export class PeopleTable {
   people = input<Person[]>([]);
   protected peopleColumns = ['id', 'firstName', 'lastName', 'identityDocument', 'actions'];
 
+  private readonly dialog = inject(MatDialog);
+  private readonly store = inject(SpaceManagementStore);
+
   protected editPerson(person: Person): void {
-    // TODO
+    this.dialog.open(CreatePersonForm, { data: person });
   }
 
   protected deletePerson(person: Person): void {
-    // TODO
+    this.store.deletePerson(person.id);
   }
 }

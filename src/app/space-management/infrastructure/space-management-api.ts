@@ -65,4 +65,12 @@ export class SpaceManagementApi extends BaseApi{
   createPerson(organizationId: number, firstName: string, lastName: string, identityDocument: string): Observable<Person> {
     return this.peopleEndpoint.createPerson(organizationId, firstName, lastName, identityDocument);
   }
+
+  updatePerson(personId: number, firstName: string, lastName: string, identityDocument: string): Observable<Person> {
+    return this.peopleEndpoint.updatePerson(personId, firstName, lastName, identityDocument);
+  }
+
+  deletePerson(personId: number): Observable<void> {
+    return this.peopleEndpoint.deletePerson(personId);
+  }
 }
