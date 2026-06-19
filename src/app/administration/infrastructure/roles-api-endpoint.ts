@@ -3,7 +3,7 @@ import {Role} from '../domain/model/role.entity';
 import {RolesResource, RolesResponse} from './roles-response';
 import {RoleAssembler} from './role-assembler';
 import {HttpClient} from '@angular/common/http';
-import {environment} from '../../../environments/environment.development';
+import {environment} from '../../../environments/environment';
 import {Observable, map} from 'rxjs';
 
 export class RolesApiEndpoint extends BaseApiEndpoint<Role, RolesResource, RolesResponse, RoleAssembler> {

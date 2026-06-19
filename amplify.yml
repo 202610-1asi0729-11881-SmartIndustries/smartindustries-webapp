@@ -1,0 +1,17 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+        - "sed -i 's|http://localhost:8080/api/v1|'\"$API_URL\"'|g' src/environments/environment.ts"
+    build:
+      commands:
+        - npm run build --configuration=production
+  artifacts:
+    baseDirectory: dist/smartlock-webapp/browser
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*

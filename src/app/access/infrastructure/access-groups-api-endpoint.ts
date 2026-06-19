@@ -3,7 +3,7 @@ import {AccessGroup} from '../domain/model/access-group.entity';
 import {AccessGroupsResource, AccessGroupsResponse} from './access-groups-response';
 import {AccessGroupAssembler} from './access-group-assembler';
 import {HttpClient} from '@angular/common/http';
-import {environment} from '../../../environments/environment.development';
+import {environment} from '../../../environments/environment';
 import {Observable, map} from 'rxjs';
 
 export class AccessGroupsApiEndpoint extends BaseApiEndpoint<AccessGroup, AccessGroupsResource, AccessGroupsResponse, AccessGroupAssembler> {

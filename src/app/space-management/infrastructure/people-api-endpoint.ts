@@ -3,7 +3,7 @@ import {Person} from '../domain/model/person.entity';
 import {PeopleResource, PeopleResponse} from './people-response';
 import {PersonAssembler} from './person-assembler';
 import {HttpClient} from '@angular/common/http';
-import {environment} from '../../../environments/environment.development';
+import {environment} from '../../../environments/environment';
 import {Observable, map} from 'rxjs';
 
 export class PeopleApiEndpoint extends BaseApiEndpoint<Person, PeopleResource, PeopleResponse, PersonAssembler> {

@@ -3,7 +3,7 @@ import {Organization} from '../domain/model/organization.entity';
 import {OrganizationsResource, OrganizationsResponse} from './organizations-response';
 import {OrganizationAssembler} from './organization-assembler';
 import {HttpClient} from '@angular/common/http';
-import {environment} from '../../../environments/environment.development';
+import {environment} from '../../../environments/environment';
 import {Observable, map} from 'rxjs';
 
 export class OrganizationsApiEndpoint extends BaseApiEndpoint<Organization, OrganizationsResource, OrganizationsResponse, OrganizationAssembler> {

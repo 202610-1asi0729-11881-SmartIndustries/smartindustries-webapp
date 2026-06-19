@@ -3,7 +3,7 @@ import {AccessEvent} from '../domain/model/access-event.entity';
 import {AccessEventsResource, AccessEventsResponse} from './access-events-response';
 import {AccessEventAssembler} from './access-event-assembler';
 import {HttpClient} from '@angular/common/http';
-import {environment} from '../../../environments/environment.development';
+import {environment} from '../../../environments/environment';
 
 export class AccessEventsApiEndpoint extends BaseApiEndpoint<AccessEvent, AccessEventsResource, AccessEventsResponse, AccessEventAssembler> {
   constructor(http: HttpClient) {

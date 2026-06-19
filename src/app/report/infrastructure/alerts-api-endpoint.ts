@@ -3,7 +3,7 @@ import {Alert} from '../domain/model/alert.entity';
 import {AlertsResource, AlertsResponse} from './alerts-response';
 import {AlertAssembler} from './alert-assembler';
 import {HttpClient} from '@angular/common/http';
-import {environment} from '../../../environments/environment.development';
+import {environment} from '../../../environments/environment';
 
 export class AlertsApiEndpoint extends BaseApiEndpoint<Alert, AlertsResource, AlertsResponse, AlertAssembler> {
   constructor(http: HttpClient) {
